@@ -17,8 +17,6 @@ void loop(){
   analogWrite(IRPin, 100);
   raw = analogRead(lightPin); 
   Serial.println(raw); //Write the value of the photoresistor to the serial monitor.
-                          //send the value to the ledPin. Depending on value of resistor 
-                                                //you have  to divide the value. for example, 
-                                                //with a 10k resistor divide the value by 2, for 100k resistor divide by 4.
-   delay(1); //short delay for faster response to light.
+                          
+   delay(500); //short delay for faster response to light.
 }
