@@ -1,0 +1,30 @@
+int lightPin = 1;  //define a pin for Photo resistor
+int IRPin = 5;     //define a pin for LED
+int RED = 6;
+
+int onRed = 100;
+int onIR = 100;
+void setup()
+{
+    Serial.begin(19200);  //Begin serial communcation
+    pinMode( IRPin, OUTPUT );
+    pinMode( RED, OUTPUT );
+}
+
+void loop(){
+  float raw, cov, ne;
+  
+  
+   raw = analogRead(lightPin);                                                                                                
+   cov = raw / 1024;
+   ne =  cov * 100;
+  
+  
+  
+
+  
+  analogWrite(RED,  onRed);
+  analogWrite(IRPin, onIR);
+  Serial.println(ne); 
+  delay(1000); //short delay for faster response to light.
+}
